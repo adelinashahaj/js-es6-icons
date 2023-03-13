@@ -118,20 +118,31 @@ let iconsContainerDom = document.getElementById('icons-container');
 let selectorDom = document.getElementById('selettore');
 
 
-for (let i = 0; i < icons.length; i++){
-    let element = icons[i];
-    console.log(element);
- for(let key in element){
-    console.log(element[key]);
- }
+    iconsContainerDom.innerHTML = "";
+    
+    for (let i = 0; i < icons.length; i++){
+        let element = icons[i];
+        console.log(element);
+     for(let key in element){
+        console.log(element[key]);
+     }
+    
+    
+    iconsContainerDom.innerHTML += `
+    <div class="icons-card">
+     <i class="fa-solid ${element.prefix}${element.name}"style= "color: ${element.color}"></i>
+     <p>${element.name}</p>
+    </div>
+    `
+    }
 
 
-iconsContainerDom.innerHTML += `
-<div class="icons-card">
- <i class="fa-solid ${element.prefix}${element.name}"style= "color: ${element.color}"></i>
- <p>${element.name}</p>
-</div>
-`
 
+selectorDom.addEventListener("change",
+ function(){
+   let selectValue = selectorDom.value;
+   let selectFilter = icons.filter(elm => elm.type === selectValue || selectValue === "");
+   
+   
 }
-  
+);
