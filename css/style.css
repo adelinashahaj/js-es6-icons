@@ -1,0 +1,26 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#icons-container{
+    max-width: 1000px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+   
+}
+.icons-card{
+    text-transform: uppercase;
+    background-color: whitesmoke;
+    margin: 20px;
+   padding: 20px 40px;
+   width: 20%;
+   text-align: center;
+   border: 1px solid gray;
+   border-radius: 10px;
+   box-shadow: 10px 10px 10px;
+
+}
