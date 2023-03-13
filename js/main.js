@@ -143,12 +143,11 @@ iconsDom(icons, iconsContainerDom);
 selectorDom.addEventListener("change",
  function(){
     let option = document.querySelectorAll("option").value;
-    if(option == "animal") {
-       
+    if(option == "animal") { 
         
     }
     let selectValue = selectorDom.value;
-    let selectFilter = icons.filter(element => element.type == selectValue || selectValue == "");
+    let selectFilter = icons.filter(element => element.type == selectValue || selectValue == "all");
     iconsDom(selectFilter, iconsContainerDom);
 }
 );
