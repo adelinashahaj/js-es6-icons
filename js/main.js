@@ -115,7 +115,7 @@ let icons = [
 ];
 
 let iconsContainerDom = document.getElementById('icons-container');
-
+let selectorDom = document.getElementById('selettore');
 
 
 for (let i = 0; i < icons.length; i++){
