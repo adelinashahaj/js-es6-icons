@@ -117,9 +117,9 @@ let icons = [
 let iconsContainerDom = document.getElementById('icons-container');
 let selectorDom = document.getElementById('selettore');
 
-
+function iconsDom(icons, iconsContainerDom) {
     iconsContainerDom.innerHTML = "";
-    
+
     for (let i = 0; i < icons.length; i++){
         let element = icons[i];
         console.log(element);
@@ -137,12 +137,18 @@ let selectorDom = document.getElementById('selettore');
     }
 
 
+};
+iconsDom(icons, iconsContainerDom);  
 
 selectorDom.addEventListener("change",
  function(){
-   let selectValue = selectorDom.value;
-   let selectFilter = icons.filter(elm => elm.type === selectValue || selectValue === "");
-   
-   
+    let option = document.querySelectorAll("option").value;
+    if(option == "animal") {
+       
+        
+    }
+    let selectValue = selectorDom.value;
+    let selectFilter = icons.filter(element => element.type == selectValue || selectValue == "");
+    iconsDom(selectFilter, iconsContainerDom);
 }
 );
