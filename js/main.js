@@ -117,6 +117,11 @@ let icons = [
 let iconsContainerDom = document.getElementById('icons-container');
 let selectorDom = document.getElementById('selettore');
 
+//bonus 1
+icons.forEach(element =>{
+    element.color = getRandomColor();
+})
+
 function iconsDom(icons, iconsContainerDom) {
     iconsContainerDom.innerHTML = "";
 
@@ -135,7 +140,7 @@ function iconsDom(icons, iconsContainerDom) {
     </div>
     `
     }
-
+  
 
 };
 iconsDom(icons, iconsContainerDom);  
@@ -149,5 +154,23 @@ selectorDom.addEventListener("change",
     let selectValue = selectorDom.value;
     let selectFilter = icons.filter(element => element.type == selectValue || selectValue == "all");
     iconsDom(selectFilter, iconsContainerDom);
+
 }
 );
+
+//bonus 1
+function getRandomColor(){
+    let letters = '0123456789ABCDEF';
+	let color = '#';
+    for(let i = 0; i < 6; i++){
+       let randomNumber = generateNumberCasuale(0,letters.length - 1);
+       color += letters[randomNumber];
+    }
+        
+    return color;
+};
+//bonus 1
+function generateNumberCasuale(min, max){
+    return Math.floor(Math.random() * (max - min + 1) + min);
+}
+
